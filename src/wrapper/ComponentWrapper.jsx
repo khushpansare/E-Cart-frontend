@@ -6,8 +6,8 @@ function ComponentWrapper(props) {
   return (
     <>
       <Navbar />
-      {props.children}
-      <Foter />
+      <div className="main-page-container">{props.children}</div>
+      {/* <Foter /> */}
     </>
   );
 }

@@ -15,6 +15,7 @@ function PageRoutes() {
       <Routes>
         <Route path="/" element={<Products />} />
         <Route path="/products" element={<Products />} />
+        <Route path="/welcome" element={<Welcome />} />
 
         {/* Authentication Pages */}
         <Route path="/user-register" element={<UserRegister />} />

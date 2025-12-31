@@ -1,0 +1,37 @@
+@use "variables" as *;
+
+header {
+  padding: 10px 0px;
+  //   background-color: #fff;
+  box-shadow: -1px -1px 5px $color-wakanda-purple,
+    1px 1px 5px $color-wakanda-purple;
+
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    ul {
+      li {
+        list-style: none;
+
+        a {
+          text-decoration: none;
+          padding: 10px 15px;
+          color: $color-gold;
+          margin: 10px 0;
+
+          &:hover {
+            color: $color-wakanda-purple;
+          }
+        }
+      }
+
+      i {
+        &:hover {
+          color: $color-wakanda-purple;
+        }
+      }
+    }
+  }
+}

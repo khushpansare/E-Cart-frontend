@@ -5,10 +5,6 @@ import PageRoutes from "./routes/pageRoutes";
 function App() {
   return (
     <>
-      {/* <Routes>
-        <Route path="/" element="<h1> Product <h1/>" />
-      </Routes> */}
-
       <PageRoutes />
     </>
   );
