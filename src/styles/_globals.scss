@@ -32,11 +32,39 @@ div[id] {
   // overflow-x: hidden;
 }
 
+a,
+button {
+  display: inline-block;
+  outline: none;
+  border: 2px solid $color-wakanda-purple;
+  background: transparent;
+  border-radius: 8px;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: $color-silver;
+  transition: 0.4s all;
+
+  &:hover {
+    color: $color-silver;
+    border: 1px solid $color-gold;
+    transition: 0.4s all;
+  }
+}
+
+input {
+  outline: none;
+  margin: 0px 0 10px;
+  border: 2px solid $color-wakanda-purple;
+  border-radius: 5px;
+  padding: 10px;
+  width: 350px;
+  font-size: 20px;
+}
+
 ul,
 li,
 p,
-nav,
-a {
+nav {
   background: transparent;
   margin: 0;
   padding: 0;

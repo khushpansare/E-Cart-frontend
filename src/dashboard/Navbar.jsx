@@ -1,25 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-// MUI Component
-import Avatar from "@mui/material/Avatar";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import IconButton from "@mui/material/IconButton";
-import Settings from "@mui/icons-material/Settings";
-import Logout from "@mui/icons-material/Logout";
+const welcomePageData = {
+  register: {
+    admin_path: "/admin-register",
+    user_path: "/user-register",
+  },
+  login: {
+    admin_path: "/admin-login",
+    user_path: "/user-login",
+  },
+};
 
 function Navbar() {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
   return (
     <>
       <header>
@@ -51,12 +44,16 @@ function Navbar() {
                   style={{ fontSize: "30px", borderRadius: "50%" }}
                 ></i>
               </button>
-              <ul className="bg-dark dropdown-menu dropdown-menu-lg-end">
-                <li>
-                  <Link to={"/welcome"}> Login </Link>
+              <ul className="bg-dark dropdown-menu dropdown-menu-lg-end text-center">
+                <li className="p-0!">
+                  <Link to={"/welcome"} state={welcomePageData.login}>
+                    Login
+                  </Link>
                 </li>
                 <li>
-                  <Link to={"/welcome"}> Register </Link>
+                  <Link to={"/welcome"} state={welcomePageData.register}>
+                    Register
+                  </Link>
                 </li>
               </ul>
             </div>
