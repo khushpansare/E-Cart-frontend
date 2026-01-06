@@ -22,6 +22,11 @@
   }
 
   .form-content {
+    .error-box {
+      color: $red;
+      margin-bottom: 15px;
+    }
+
     button {
       float: right;
       margin-top: 25px;

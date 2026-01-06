@@ -10,21 +10,36 @@ import Buyer from "../assets/customer.png";
 
 function Welcome() {
   const location = useLocation();
-  const { admin_path, user_path } = location.state;
+  const { path } = location.state;
 
   return (
     <ComponentWrapper>
       <div className="welcome-container">
         <div className="admin">
           <img src={Seller} alt="" />
-          <h4>Want to sell your products?</h4>
-          <Link to={admin_path}>Seller</Link>
+          {path === "/register" ? (
+            <h4>Want to sell your products?</h4>
+          ) : (
+            <h4>Admin Login</h4>
+          )}
+
+          <Link to={path} state={{ role: "admin" }}>
+            Seller
+          </Link>
         </div>
 
         <div className="user">
           <img src={Buyer} alt="" />
-          <h4>Want to buy products?</h4>
-          <Link to={user_path}>Continue as Buyer</Link>
+
+          {path === "/register" ? (
+            <h4>Want to buy products?</h4>
+          ) : (
+            <h4>User Login</h4>
+          )}
+
+          <Link to={path} state={{ role: "user" }}>
+            Continue as Buyer
+          </Link>
         </div>
       </div>
     </ComponentWrapper>

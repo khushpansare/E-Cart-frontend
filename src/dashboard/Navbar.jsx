@@ -3,12 +3,10 @@ import { Link } from "react-router-dom";
 
 const welcomePageData = {
   register: {
-    admin_path: "/admin-register",
-    user_path: "/user-register",
+    path: "/register",
   },
   login: {
-    admin_path: "/admin-login",
-    user_path: "/user-login",
+    path: "/login",
   },
 };
 
