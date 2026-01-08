@@ -1,0 +1,77 @@
+@use "variables" as *;
+
+.contact-wrapper {
+  //   width: 100%;
+  max-width: 576px;
+  padding: 25px 35px;
+  margin: auto;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(192, 192, 192, 0.2); // silver tint
+  box-shadow: 0 0 10px rgba(218, 165, 32, 0.4),
+    // gold outer glow
+    inset 0 0 20px rgba(63, 42, 75, 0.3); // wakanda purple inner light
+
+  h1,
+  h3 {
+    color: $red;
+    margin: 15px 0;
+  }
+
+  h4 {
+    // word-break: break-all;
+    overflow-wrap: anywhere;
+  }
+
+  ul {
+    margin: 30px 0;
+    li {
+      list-style: none;
+      margin: 10px 0;
+      color: $color-silver;
+      letter-spacing: 2px;
+
+      a {
+        text-decoration: none;
+        color: $color-silver;
+      }
+    }
+  }
+
+  .btn-contact {
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+    padding: 12px 0;
+    background: linear-gradient(
+      135deg,
+      rgba(218, 165, 32, 0.8),
+      rgba(63, 42, 75, 0.8)
+    );
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 12px rgba(218, 165, 32, 0.5);
+    transition: 0.3s;
+
+    &:hover {
+      box-shadow: 0 0 20px rgba(218, 165, 32, 0.9);
+      transform: translateY(-3px);
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .contact-wrapper {
+    margin: 10px 15px;
+    padding: 0 10px;
+
+    ul {
+      padding: 15px;
+    }
+  }
+}
