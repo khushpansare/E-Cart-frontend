@@ -9,10 +9,19 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // background-color: $color-dark-grey;
 
     h2 {
       color: $color-white;
+    }
+
+    .middle-list {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      li {
+        margin: 0 10px;
+      }
     }
 
     ul li a {
@@ -45,6 +54,26 @@ header {
         color: $color-dark-grey;
         background: $color-white;
         transition: 0.4s all;
+      }
+    }
+
+    .ham-burger-menu {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: $tablet) {
+  header {
+    nav {
+      padding: 5px 10px;
+
+      .middle-list {
+        display: none;
+      }
+
+      .ham-burger-menu {
+        display: block;
       }
     }
   }

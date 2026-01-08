@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
+import Nav_Mobile from "./Nav_Mobile";
 
 const welcomePageData = {
   register: {
@@ -11,6 +12,20 @@ const welcomePageData = {
 };
 
 function Navbar() {
+  const mobile_nav_toggle_ref = useRef(null);
+
+  const [mobile_nav_flag, setmobile_nav_flag] = useState(false);
+
+  const open_mobile_nav = () => {
+    setmobile_nav_flag(!mobile_nav_flag);
+    mobile_nav_toggle_ref.current.classList.remove("mobile-nav-display");
+  };
+
+  const close_mobile_nav = () => {
+    setmobile_nav_flag(!mobile_nav_flag);
+    mobile_nav_toggle_ref.current.classList.add("mobile-nav-display");
+  };
+
   return (
     <>
       <header>
@@ -18,9 +33,15 @@ function Navbar() {
           <ul className="logo">
             <h2>Logo</h2>
           </ul>
-          <ul>
+          <ul className="middle-list">
             <li>
               <Link to={"/products"}>Products</Link>
+            </li>
+            <li>
+              <Link to={"/admin-dashboard"}>Admin Dashboard</Link>
+            </li>
+            <li>
+              <Link to={"/user-dashboard"}>User Dashboard</Link>
             </li>
           </ul>
           <ul>
@@ -53,8 +74,24 @@ function Navbar() {
               </ul>
             </div>
           </ul>
+          <ul className="ham-burger-menu">
+            {mobile_nav_flag ? (
+              <a onClick={close_mobile_nav}>
+                <i className="bi bi-x-lg"></i>
+              </a>
+            ) : (
+              <a onClick={open_mobile_nav}>
+                <i className="bi bi-list"></i>
+              </a>
+            )}
+          </ul>
         </nav>
       </header>
+
+      <Nav_Mobile
+        mobile_nav_toggle_ref={mobile_nav_toggle_ref}
+        close_mobile_nav={close_mobile_nav}
+      />
     </>
   );
 }

@@ -21,10 +21,10 @@ function PageRoutes() {
         <Route path="/login" element={<Login />} />
 
         {/* User Pages */}
-        <Route path="/user" element={<UserLayout />} />
+        <Route path="/user-dashboard" element={<UserLayout />} />
 
         {/* Admin Pages */}
-        <Route path="/user" element={<AdminLayout />} />
+        <Route path="/admin-dashboard" element={<AdminLayout />} />
       </Routes>
     </>
   );
