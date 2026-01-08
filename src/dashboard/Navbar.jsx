@@ -42,7 +42,7 @@ function Navbar() {
                   style={{ fontSize: "30px", borderRadius: "50%" }}
                 ></i>
               </button>
-              <ul className="bg-dark dropdown-menu dropdown-menu-lg-end text-center">
+              <ul className="bg-dark dropdown-menu dropdown-menu-end text-center">
                 <li className="p-0!">
                   <Link to={"/welcome"} state={welcomePageData.login}>
                     Login

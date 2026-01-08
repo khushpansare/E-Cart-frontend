@@ -17,10 +17,6 @@ body,
   padding: 0;
 }
 
-div[id] {
-  scroll-margin-top: 120px;
-}
-
 .main-page-container {
   // margin: 50px 20px 20px;
   margin-top: 25px;
@@ -32,7 +28,23 @@ div[id] {
   // overflow-x: hidden;
 }
 
-a,
+a {
+  display: inline-block;
+  background: transparent;
+  border: 2px solid $color-wakanda-purple;
+  border-radius: 8px;
+  padding: 5px 10px;
+  text-decoration: none;
+  color: $color-silver;
+  transition: 0.4s all;
+
+  &:hover {
+    color: $color-silver;
+    border: 1px solid $color-gold;
+    transition: 0.4s all;
+  }
+}
+
 button {
   display: inline-block;
   outline: none;
@@ -68,6 +80,7 @@ nav {
   background: transparent;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 #intro,
@@ -82,6 +95,7 @@ li,
 a,
 p {
   font-size: 1rem;
+  margin: 10px 0;
 }
 
 p {

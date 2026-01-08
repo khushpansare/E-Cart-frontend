@@ -1,8 +1,8 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Welcome from "../pages/Welcome";
-import Register from "../pages/admin-pages/Register";
-import Login from "../pages/admin-pages/Login";
+import Register from "../pages/authentication-pages/Register";
+import Login from "../pages/authentication-pages/Login";
 import Products from "../pages/product-pages/Products";
 import UserLayout from "../layout/UserLayout";
 import AdminLayout from "../layout/AdminLayout";
