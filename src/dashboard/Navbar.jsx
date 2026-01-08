@@ -25,7 +25,7 @@ function Navbar() {
           </ul>
           <ul>
             <div className="btn-group">
-              <button
+              <a
                 type="button"
                 data-bs-toggle="dropdown"
                 data-bs-display="static"
@@ -37,11 +37,8 @@ function Navbar() {
                   // padding: "7px 10px ",
                 }}
               >
-                <i
-                  className="bi bi-person-circle"
-                  style={{ fontSize: "30px", borderRadius: "50%" }}
-                ></i>
-              </button>
+                <i className="bi bi-person-circle"></i>
+              </a>
               <ul className="bg-dark dropdown-menu dropdown-menu-end text-center">
                 <li className="p-0!">
                   <Link to={"/welcome"} state={welcomePageData.login}>

@@ -6,13 +6,14 @@ import Login from "../pages/authentication-pages/Login";
 import Products from "../pages/product-pages/Products";
 import UserLayout from "../layout/UserLayout";
 import AdminLayout from "../layout/AdminLayout";
+import HomePage from "../pages/HomePage";
 
 function PageRoutes() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Products />} />
-        <Route path="/products" element={<Products />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/products" element={<HomePage />} />
         <Route path="/welcome" element={<Welcome />} />
 
         {/* Authentication Pages */}

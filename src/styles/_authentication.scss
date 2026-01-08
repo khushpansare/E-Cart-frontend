@@ -7,6 +7,8 @@
   justify-content: space-evenly;
   margin: 35px 0 15px;
   padding: 25px;
+  background-color: $color-light-grey;
+  border-radius: 5px;
 
   .img {
     text-align: center;
@@ -22,6 +24,10 @@
   }
 
   .form-content {
+    background-color: $color-white;
+    padding: 25px 15px;
+    border-radius: 5px;
+
     .error-box {
       color: $red;
       margin-bottom: 15px;

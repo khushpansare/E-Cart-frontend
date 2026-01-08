@@ -3,8 +3,8 @@
 * {
   margin: 0;
   box-sizing: 0;
-  background-color: $color-black-panther;
-  color: $color-gold;
+  background-color: $color-white;
+  color: $color-dark-grey;
   font-family: $font-primary;
 }
 
@@ -31,42 +31,50 @@ body,
 a {
   display: inline-block;
   background: transparent;
-  border: 2px solid $color-wakanda-purple;
+  // border: 2px solid $color-wakanda-purple;
   border-radius: 8px;
-  padding: 5px 10px;
+  padding: 7px 5px;
   text-decoration: none;
-  color: $color-silver;
+  color: $color-dark-grey;
   transition: 0.4s all;
 
   &:hover {
-    color: $color-silver;
-    border: 1px solid $color-gold;
+    color: $color-white;
+    background: $color-dark-grey;
+    // border: 2px solid $color-wakanda-purple;
     transition: 0.4s all;
   }
+}
+
+i {
+  font-size: 30px;
+  border-radius: 50%;
+  padding: 4px 8px;
 }
 
 button {
   display: inline-block;
   outline: none;
-  border: 2px solid $color-wakanda-purple;
-  background: transparent;
+  border: 2px solid $color-dark-grey;
   border-radius: 8px;
   padding: 10px 20px;
   text-decoration: none;
-  color: $color-silver;
+  color: $color-dark-grey;
   transition: 0.4s all;
 
   &:hover {
-    color: $color-silver;
-    border: 1px solid $color-gold;
+    color: $color-white;
+    background: $color-dark-grey;
     transition: 0.4s all;
   }
 }
 
 input {
   outline: none;
+  border: none;
   // margin: 0px 0 10px;
-  border: 2px solid $color-wakanda-purple;
+  background: $color-light-grey;
+  // border: 2px solid $color-wakanda-purple;
   border-radius: 5px;
   padding: 10px;
   width: 350px;
@@ -81,6 +89,14 @@ nav {
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+div,
+img,
+form,
+label,
+i {
+  background: transparent;
 }
 
 #intro,
