@@ -1,6 +1,4 @@
 import React from "react";
-import ComponentWrapper from "../../wrapper/ComponentWrapper";
-import Slider_Main_Page from "./Slider";
 
 const productData = [
   {
@@ -64,23 +62,49 @@ const productData = [
   },
 ];
 
-function Products() {
+function Admin_Products() {
   return (
     <>
-      <div className="product-container">
-        {productData.map((val, i) => {
-          return (
-            <div className="card" key={i}>
-              <img src={val.productImg} alt="" />
-              <h6>{val.productName}</h6>
-              <h6>{val.productPrice}</h6>
-              <button>Add to Cart</button>
-            </div>
-          );
-        })}
+      <div className="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Image</th>
+              <th>Discount</th>
+              <th>Quantity</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {productData.map((val, i) => {
+              return (
+                <tr key={i}>
+                  <td>{val.productName}</td>
+                  <td>{val.productPrice}</td>
+                  <td>
+                    <img src={val.productImg} alt="" height={50} />
+                  </td>
+                  <td>{val.productDiscount}</td>
+                  <td>{val.productQuantity}</td>
+                  <td>
+                    <button>
+                      <i class="bi bi-pencil-fill"></i>
+                    </button>
+                    <br />
+                    <button>
+                      <i class="bi bi-trash-fill"></i>
+                    </button>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     </>
   );
 }
 
-export default Products;
+export default Admin_Products;

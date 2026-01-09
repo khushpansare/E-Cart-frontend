@@ -1,8 +1,8 @@
 import React from "react";
-import ComponentWrapper from "../wrapper/ComponentWrapper";
-import Products from "./product-pages/Products";
-import Slider from "./product-pages/Slider";
-import Category from "./Category";
+import ComponentWrapper from "../../wrapper/ComponentWrapper";
+import Products from "../product-pages/Products";
+import Slider from "../product-pages/Slider";
+// import Category from "./Category";
 
 function HomePage() {
   return (

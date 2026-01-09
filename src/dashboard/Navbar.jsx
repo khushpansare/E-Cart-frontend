@@ -38,7 +38,7 @@ function Navbar() {
               <Link to={"/products"}>Products</Link>
             </li>
             <li>
-              <Link to={"/admin-dashboard"}>Admin Dashboard</Link>
+              <Link to={"/admin"}>Admin Dashboard</Link>
             </li>
             <li>
               <Link to={"/user-dashboard"}>User Dashboard</Link>
