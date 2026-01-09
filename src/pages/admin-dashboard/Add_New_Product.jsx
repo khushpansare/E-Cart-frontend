@@ -2,27 +2,42 @@ import React from "react";
 
 import { Formik } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
 
 const product_validationSchema = Yup.object({
   productName: Yup.string()
     .max(30, "Must be 30 characters or less")
     .required("Required*"),
   productPrice: Yup.number("Contains only numbers").required("Required*"),
-  productImg: Yup.mixed()
-    .test("fileRequired", "Image is required", (value) => value instanceof File)
-    .test("fileSize", "Image size must be less than 5MB", (value) => {
-      if (!value) return true; // let required handle it
-      return value.size <= 5 * 1024 * 1024;
-    })
-    .test("fileType", "Only JPG, PNG, WEBP images allowed", (value) => {
-      if (!value) return true;
-      return ["image/jpeg", "image/png", "image/webp"].includes(value.type);
-    }),
+  // productImg: Yup.mixed()
+  //   .test("fileRequired", "Image is required", (value) => value instanceof File)
+  //   .test("fileSize", "Image size must be less than 5MB", (value) => {
+  //     if (!value) return true; // let required handle it
+  //     return value.size <= 5 * 1024 * 1024;
+  //   })
+  //   .test("fileType", "Only JPG, PNG, WEBP images allowed", (value) => {
+  //     if (!value) return true;
+  //     return ["image/jpeg", "image/png", "image/webp"].includes(value.type);
+  //   }),
   productQty: Yup.number("Contains only numbers").required("Required*"),
   productDiscount: Yup.number("Contains only numbers").required("Required*"),
 });
 
 function Add_New_Product({ setProduct_form_data, product_form_data }) {
+  const handleFormSubmit = (values) => {
+    console.log(product_form_data);
+    axios
+      .post("http://localhost:5000/product/add", values)
+      .then((res) => {
+        console.log("res", res);
+        // setmessage(res.data);
+        // navigate("/admin/products");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <>
       <div className="product-form">
@@ -35,7 +50,7 @@ function Add_New_Product({ setProduct_form_data, product_form_data }) {
             productDiscount: "",
           }}
           validationSchema={product_validationSchema}
-          onSubmit={(values) => console.log(values)}
+          onSubmit={(values) => handleFormSubmit(values)}
         >
           {({
             setFieldValue,
@@ -171,19 +186,19 @@ function Add_New_Product({ setProduct_form_data, product_form_data }) {
                   name="productImg"
                   accept="image/*"
                   hidden
-                  onChange={(e) => {
-                    const file = e.currentTarget.files[0];
+                  // onChange={(e) => {
+                  //   const file = e.currentTarget.files[0];
 
-                    if (!file) return;
+                  //   if (!file) return;
 
-                    setProduct_form_data({
-                      ...product_form_data,
-                      productImg: file,
-                    });
+                  //   setProduct_form_data({
+                  //     ...product_form_data,
+                  //     productImg: file,
+                  //   });
 
-                    setFieldValue("productImg", file);
-                    setFieldTouched("productImg", true);
-                  }}
+                  //   setFieldValue("productImg", file);
+                  //   setFieldTouched("productImg", true);
+                  // }}
                 />
                 <div className="error-msg">
                   {errors.productImg && touched.productImg && errors.productImg}
