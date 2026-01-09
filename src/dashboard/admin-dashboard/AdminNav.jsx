@@ -4,7 +4,6 @@ import { Link, NavLink, useLocation } from "react-router-dom";
 function AdminNav() {
   const location = useLocation();
   const { pathname } = location;
-  console.log(pathname);
   return (
     <>
       <div className="admin-side-nav">

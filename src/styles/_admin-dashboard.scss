@@ -55,6 +55,19 @@
     overflow-x: auto;
     overflow-y: auto;
     //   -webkit-overflow-scrolling: touch;
+
+    .header {
+      a {
+        border: 2px solid $color-dark-grey;
+        &:hover {
+          color: $color-white;
+
+          i {
+            color: $color-white;
+          }
+        }
+      }
+    }
   }
 
   table {

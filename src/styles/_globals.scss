@@ -37,6 +37,7 @@ a {
   text-decoration: none;
   color: $color-dark-grey;
   transition: 0.4s all;
+  cursor: pointer;
 
   &:hover {
     color: $color-white;
@@ -47,9 +48,10 @@ a {
 }
 
 i {
-  font-size: 30px;
+  font-size: 20px;
   border-radius: 50%;
   padding: 4px 8px;
+  font-weight: 900;
 }
 
 button {
@@ -153,6 +155,36 @@ h5 {
 
 h6 {
   font-size: $font-heading;
+}
+
+.error-msg {
+  color: $red;
+}
+
+.image-upload-box {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  border: 2px dashed #aaa;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: #f8f8f8;
+  text-align: center;
+  overflow: hidden;
+}
+
+.image-upload-box span {
+  color: #666;
+  font-size: 14px;
+}
+
+.preview-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 @media (max-width: $mobile) {
